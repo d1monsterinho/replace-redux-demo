@@ -1,11 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
 
 import Card from '../UI/Card';
 import './ProductItem.css';
+import {ProductsContext} from "../../context/products-context";
 
 const ProductItem = props => {
+  const {toggleFavorite} = useContext(ProductsContext);
 
   const toggleFavHandler = () => {
+    toggleFavorite(props.id);
   };
 
   return (
